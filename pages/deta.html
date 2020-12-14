@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="zh">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<title>海洋气候监测预测平台</title>
+		<link rel="stylesheet" href="../public/lib/layui/css/layui.css">
+		<link rel="stylesheet" href="../assets/css/deta.css">
+	</head>
+	<body>
+		<div class="layui-form" id="type1">
+			<div class="layui-form-item">
+				<div class="layui-inline">
+					<select id="idxYi" name="id" lay-verify="required" lay-reqText="请选择要素" lay-filter="idxYi"></select>
+				</div>
+				<div class="layui-inline idx-hide" id="idxErPar">
+					<select id="idxEr" name="y" lay-filter="idxEr"></select>
+					<!-- <select id="idxEr" name="y" lay-verify="required" lay-reqText="请选择年" lay-filter="idxEr"></select> -->
+				</div>
+				<div class="layui-inline idx-hide" id="idxSanPar">
+					<select id="idxSan" name="m"></select>
+				</div>
+				<div class="layui-inline idx-hide" id="idxSiPar">
+					<select id="idxSi" name="d"></select>
+				</div>
+				<div class="layui-inline">
+					<button class="layui-btn" lay-submit lay-filter="query">查询</button>
+				</div>
+				<!-- <div class="layui-inline">
+					<button class="layui-btn" lay-submit lay-filter="export">一键导出</button>
+				</div> -->
+			</div>
+		</div>
+		
+		<div id="iframe"></div>
+	</body>
+	<script src="../public/lib/layui/layui.js"></script>
+	<script>
+		layui
+			.config({
+				base: "../assets/",
+			})
+			.extend({
+				http: "api/http",
+				hand: "api/hand",
+				deta: "js/deta",
+			})
+			.use("deta");
+	</script>
+</html>

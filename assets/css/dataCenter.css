@@ -1,0 +1,152 @@
+* {
+	margin: 0;
+	padding: 0;
+	-moz-user-select: none;
+	-webkit-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+body {
+	width: 100%;
+	/* height: 100%; */
+	padding-top: 80px;
+	box-sizing: border-box;
+}
+
+.lt {
+	float: left;
+}
+
+.rt {
+	float: right;
+}
+
+.head {
+	width: 100%;
+	height: 80px;
+	padding: 0 40px;
+	box-sizing: border-box;
+	position: fixed;
+	left: 0;
+	top: 0;
+	z-index: 3;
+	background: #000015;
+}
+
+.logo {
+	width: 54px;
+	height: 54px;
+	background: url(../../images/logo.png) no-repeat;
+	background-size: 100% 100%;
+	margin-top: 8px;
+	margin-right: 20px;
+}
+
+.head-tle {
+	width: 525px;
+	height: 54px;
+	background: url(../../images/home3.png) no-repeat;
+	background-size: 100% 100%;
+	margin-top: 13px;
+}
+
+.out {
+	width: 66px;
+	height: 37px;
+	background: url(../../images/out.png) no-repeat;
+	background-size: 100% 100%;
+	margin-top: 21px;
+	margin-left: 20px;
+	cursor: pointer;
+}
+
+.head-deta {
+	height: 80px;
+}
+
+.head-deta .head-rt-lt {
+	width: 156px;
+	height: 80px;
+	line-height: 80px;
+	color: #1CA9F7;
+	font-size: 20px;
+	font-weight: 500;
+	letter-spacing: 1px;
+}
+
+.head-deta .head-rt-rt {
+	width: 250px;
+	height: 44px;
+	line-height: 44px;
+	color: #FFFFFF;
+	font-size: 28px;
+	font-weight: 400;
+	letter-spacing: 1px;
+	margin: 18px 0 18px 30px;
+	padding: 0 20px;
+	box-sizing: border-box;
+	background: url(../../images/home1.png) no-repeat;
+	background-size: 100% 100%;
+}
+
+.head-time {
+	width: 67px;
+	color: #FFFFFF;
+	font-size: 12px;
+	font-weight: 400;
+}
+
+.head-time p {
+	height: 22px;
+}
+
+.head-time p:nth-child(1) {
+	line-height: 33px;
+}
+
+.head-time p:nth-child(2) {
+	line-height: 22px;
+}
+
+/* .dataCenter {
+	width: 850px;
+	height: 100%;
+	box-sizing: border-box;
+	margin: auto;
+	z-index: 2;
+} */
+.data-title{
+	width: 100%;
+	height:80px;
+	line-height: 80px;
+	font-size:32px;
+}
+.dataCenter thead tr {
+	padding: 8px;
+	line-height: 3;
+	font-size: 20px;
+}
+/* .dataCenter thead {
+	border-top: 1px solid #dddddd;
+} */
+.dataCenter tr th:nth-child(1){
+	width:200px;
+}
+.dataCenter table {
+	width: 100%;
+}
+.dataCenter td {
+	color:#41474d;
+	padding: 8px;
+	line-height: 1.5;
+	vertical-align: top;
+	border-top: 1px solid #dddddd;
+}
+
+.dataCenter td span {
+	color: #337ab7;
+	cursor: pointer;
+}
+
+

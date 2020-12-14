@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="zh">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<title>海洋气候监测预测平台</title>
+		<link rel="stylesheet" href="../public/lib/layui/css/layui.css">
+		<link rel="stylesheet" href="../assets/css/imgTab.css">
+	</head>
+	<body>
+		<div class="img-top hide">
+			<div class="img-left">
+				<p>预测</p>
+				<img src="" id="forecast">
+			</div>
+			<div class="img-right">
+				<p>监测</p>
+				<img src="" id="monitor">
+			</div>
+		</div>
+
+
+		<div class="layui-form hide">
+			<div class="hide-container">
+				<div class="hide-row" id="thead">
+					<!-- <div>月份</div>
+					<div>东北</div>
+					<div>华北</div>
+					<div>黄淮</div>
+					<div>江汉</div>
+					<div>月份</div>
+					<div>东北</div>
+					<div>华北</div>
+					<div>黄淮</div>
+					<div>江汉</div>
+					<div>华北</div>
+					<div>黄淮</div>
+					<div>江汉</div> -->
+				</div>
+				<div class="hide-row" id="tbody">
+					<!-- <div><input type="text" name="Month" lay-verify="dete" autocomplete="off" class="layui-input"></div>
+					<div><input type="text" name="DongBei" lay-verify="required" lay-reqtext="请输入东北数值" autocomplete="off" class="layui-input"></div> -->
+				</div>
+
+				<div class="subbtn">
+					<button class="layui-btn" lay-submit lay-filter="addBtn">保存</button>
+				</div>
+			</div>
+		</div>
+
+		<!-- <div class="layui-form hide">
+			<div class="layui-container">
+				<div class="layui-row" id="tabHead">
+					<div class="layui-col-xs1">月份</div>
+					<div class="layui-col-xs1">东北</div>
+					<div class="layui-col-xs1">华北</div>
+					<div class="layui-col-xs1">黄淮</div>
+					<div class="layui-col-xs1">江汉</div>
+					<div class="layui-col-xs1">江淮</div>
+					<div class="layui-col-xs1">江南</div>
+					<div class="layui-col-xs1">华南</div>
+					<div class="layui-col-xs1">西北</div>
+					<div class="layui-col-xs1">西藏</div>
+					<div class="layui-col-xs1">西南</div>
+					<div class="layui-col-xs1">准确率</div>
+					<div class="layui-col-xs1">准确率</div>
+				</div>
+				<div class="layui-row">
+					<div class="layui-col-xs1">
+						<input type="text" id="dete" name="Month" lay-verify="dete" autocomplete="off" class="layui-input">
+					</div>
+					<div class="layui-col-xs1">
+						<input type="text" name="DongBei" lay-verify="required" lay-reqtext="请输入东北数值" autocomplete="off" class="layui-input">
+					</div>
+					<div class="layui-col-xs1">
+						<input type="text" name="DongBei" lay-verify="required" lay-reqtext="请输入东北数值" autocomplete="off" class="layui-input">
+					</div>
+					<div class="layui-col-xs1">
+						<input type="text" name="HuaBei" lay-verify="required" lay-reqtext="请输入华北数值" autocomplete="off" class="layui-input">
+					</div>
+					<div class="layui-col-xs1">
+						<input type="text" name="HuangHuai" lay-verify="required" lay-reqtext="请输入黄淮数值" autocomplete="off" class="layui-input">
+					</div>
+					<div class="layui-col-xs1">
+						<input type="text" name="JiangHan" lay-verify="required" lay-reqtext="请输入江汉数值" autocomplete="off" class="layui-input">
+					</div>
+					<div class="layui-col-xs1">
+						<input type="text" name="JiangHuai" lay-verify="required" lay-reqtext="请输入江淮数值" autocomplete="off" class="layui-input">
+					</div>
+					<div class="layui-col-xs1">
+						<input type="text" name="JiangNan" lay-verify="required" lay-reqtext="请输入江南数值" autocomplete="off" class="layui-input">
+					</div>
+					<div class="layui-col-xs1">
+						<input type="text" name="HuaNan" lay-verify="required" lay-reqtext="请输入华南数值" autocomplete="off" class="layui-input">
+					</div>
+					<div class="layui-col-xs1">
+						<input type="text" name="XiBei" lay-verify="required" lay-reqtext="请输入西北数值" autocomplete="off" class="layui-input">
+					</div>
+					<div class="layui-col-xs1">
+						<input type="text" name="XiZang" lay-verify="required" lay-reqtext="请输入西藏数值" autocomplete="off" class="layui-input">
+					</div>
+					<div class="layui-col-xs1">
+						<input type="text" name="XiNan" lay-verify="required" lay-reqtext="请输入西南数值" autocomplete="off" class="layui-input">
+					</div>
+					<div class="layui-col-xs1">
+						<input type="text" name="Obtain" lay-verify="required" lay-reqtext="请输入准确率" autocomplete="off" class="layui-input">
+					</div>
+				</div>
+
+				<div class="layui-row subbtn">
+					<button class="layui-btn" lay-submit lay-filter="addBtn">一键生成</button>
+				</div>
+			</div>
+		</div> -->
+
+
+	</body>
+	<script src="../public/lib/layui/layui.js"></script>
+	<script>
+		layui
+			.config({
+				base: "../assets/",
+			})
+			.extend({
+				http: "api/http",
+				hand: "api/hand",
+				imgTab: "js/imgTab",
+			})
+			.use("imgTab");
+	</script>
+</html>

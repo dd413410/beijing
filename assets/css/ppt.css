@@ -1,0 +1,71 @@
+*{
+	margin: 0;
+	padding: 0;
+	-moz-user-select:none;
+	-webkit-user-select:none;
+	-ms-user-select:none;
+	user-select:none;
+}
+body{
+	width: 100%;
+	height: 100vh;
+}
+.layui-form{
+	margin-top: 40px;
+}
+.layui-form-item{
+	text-align: center;
+}
+
+#check{
+	display: none;
+}
+#checks{
+	width: 80%;
+	height: 60px;
+	overflow-y: auto;
+}
+
+
+.isIn{
+	display: none;
+}
+.date{
+	display: none;
+}
+#time{
+	display: none;
+}
+
+
+
+
+.subbtn {
+	background-color: #5a98de;
+}
+#conter{
+	width: 720px;
+	margin: auto;
+}
+#conter img{
+	width: 720px;
+	margin-bottom: 10px;
+}
+.temp{
+	text-align: center;
+	font-size: 50px;
+	font-weight: 700;
+	line-height: 400px;
+}
+
+table{
+	width: 100%;
+	text-align: center;
+}
+table tr,table td{
+	height: 40px;
+}
+
+
+
+

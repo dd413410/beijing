@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="zh">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<title>海洋气候监测预测平台</title>
+		<link rel="stylesheet" href="../public/lib/layui/css/layui.css">
+		<link rel="stylesheet" href="../assets/css/dataCenter.css">
+		<link rel="stylesheet" href="../assets/css/monitor.css">
+	</head>
+	<body>
+		<div class="head">
+			<div class="lt">
+				<p class="logo lt"></p>
+				<p class="head-tle lt"></p>
+			</div>
+			<div class="head-deta rt">
+				<div class="head-rt-lt lt" id="user">
+					管理员 欢迎登陆
+				</div>
+				<div class="head-rt-rt lt">
+					<div class="lt" id="time">
+						10:47:21
+					</div>
+					<div class="head-time rt">
+						<p id="week">
+							星期五
+						</p>
+						<p id="date">
+							2020.07.17
+						</p>
+					</div>
+				</div>
+				<div class="out lt" id="out"></div>
+			</div>
+		</div>
+
+
+		<div class="layui-container dataCenter">
+			<div class="layui-row">
+				<div class="layui-col-xs9">
+					<div class="data-title">
+						数据中心
+					</div>
+					<table>
+						<thead>
+							<tr>
+								<th>数据类型</th>
+								<th>数据描述</th>
+							</tr>
+						</thead>
+						<tbody id="tbody">
+							<!-- <tr>
+								<td>
+									<a href="#">CMPA降水</a>
+								</td>
+								<td>全球网格的月度和五单元降水量平均值。它包括从1979年至今的标准版本和增强版本（带有NCEP重新分析）。</td>
+							</tr> -->
+						</tbody>
+					</table>
+				</div>
+				<div class="layui-col-xs2 layui-col-xs-offset1">
+					<div class="data-title">
+						月会商：
+					</div>
+					<table>
+						<tbody id="meet">
+							<!-- <tr>
+								<td>
+									<a href="#">CMPACMPACMPACMPACMPA降水</a>
+								</td>
+							</tr> -->
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+
+
+
+		<script src="../public/lib/layui/layui.js"></script>
+		<script>
+			layui
+				.config({
+					base: "../assets/",
+				})
+				.extend({
+					http: "api/http",
+					hand: "api/hand",
+					lib: "js/lib",
+					dataCenter: "js/dataCenter",
+				}).use(["lib", "dataCenter"]);
+		</script>
+	</body>
+</html>

@@ -1,0 +1,50 @@
+*{
+	margin:0;
+	padding: 0;
+	-moz-user-select:none;
+	-webkit-user-select:none;
+	-ms-user-select:none;
+	user-select:none;
+}
+
+html,body{
+	width: 100%;
+	height: 100%;
+	
+}
+.pdf-list{
+	width: 800px;
+	margin: 0 auto;
+	padding-top: 20px;
+	
+}
+.list-item{
+	width: 100%;
+	
+	padding: 0 10px;
+	border-bottom: 1px solid #ccc;
+	box-sizing: border-box;
+	cursor: pointer;
+	display: flex;
+}
+.list-item>p{
+	height: 60px;
+	line-height: 60px;
+}
+.item-title{
+	width: 70%;
+	font-size: 24px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+.item-time{
+	width: 20%;
+	font-size: 16px;
+	color: #808080;
+}
+.item-btn{
+	width: 10%;
+	color: #4395ff;
+	text-align: center;
+}

@@ -1,0 +1,62 @@
+<script>
+  sessionStorage.clear();
+</script>
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>海洋气候监测预测平台</title>
+		<link rel="stylesheet" href="./public/lib/layui/css/layui.css">
+		<link rel="stylesheet" href="./assets/css/index.css">
+	</head>
+
+	<body>
+		<div class="head">
+			<div class="head-text">
+				海洋气候监测预测平台
+			</div>
+		</div>
+
+		<div class="layui-form lay-form">
+			<div class="layui-form-item form-item-key">
+				用户名:
+			</div>
+			<div class="layui-form-item form-item-ipt">
+				<div class="layui-input-block">
+					<input type="text" name="username" autofocus required lay-verify="username" placeholder="请输入用户名" autocomplete="off" class="layui-input">
+				</div>
+				<img src="./images/login1.png" alt="">
+			</div>
+
+			<div class="layui-form-item form-item-key">
+				密码:
+			</div>
+			<div class="layui-form-item form-item-ipt">
+				<div class="layui-input-block">
+					<input type="password" name="password" id="password" required lay-verify="password" placeholder="请输入密码" autocomplete="off" class="layui-input">
+				</div>
+				<img src="./images/login2.png" alt="" is="1" id="loImg">
+			</div>
+
+			<div class="layui-form-item">
+				<button class="layui-btn subbtn" id="login" lay-submit lay-filter="login">登陆</button>
+			</div>
+		</div>
+
+	</body>
+	<script src="./public/lib/layui/layui.js"></script>
+	<script>
+		layui
+			.config({
+				base: "./assets/",
+			})
+			.extend({
+				http: "api/http",
+				index: "js/index",
+			})
+			.use("index");
+	</script>
+
+</html>
