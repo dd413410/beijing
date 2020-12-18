@@ -8,11 +8,10 @@ layui.define(["http", "carousel"], function(e) {
 	var user = sessionStorage.user;
 	$("#user").html(user + " 欢迎登陆");
 
-	// 跳转不同的页面
-	$(".menu-item").click(function() {
-		var url = $(this).attr("url");
-		window.location.href = url;
-	});
+	var w = $("#carousel").width();
+	var h = Math.ceil(w / 2.3);
+	var hPx = h + "px";
+	
 	// 获取图片
 	function getDataFn() {
 		http({
@@ -23,14 +22,15 @@ layui.define(["http", "carousel"], function(e) {
 				var list = res.data;
 				var str = '';
 				for (var l = 0; l < list.length; l++) {
-					str += '<img src="' + list[l] + '" />'
+					str += '<div><img src="' + list[l] + '" /></div>'
 				};
 				$("#centerCar").html('<div carousel-item>' + str + '</div>');
 				carousel.render({
 					elem: '#centerCar',
+					// autoplay:false,
 					interval: 1800,
 					width: "100%",
-					height: "100%",
+					height: hPx,
 					anim: "fade",
 					interval: 3000,
 					arrow: "none",
@@ -41,5 +41,12 @@ layui.define(["http", "carousel"], function(e) {
 	};
 	getDataFn();
 	
+	// 跳转不同的页面
+	$(".menu-item").click(function() {
+		var url = $(this).attr("url");
+		window.location.href = url;
+	});
+
+
 	e("home", {})
 });

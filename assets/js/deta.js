@@ -133,56 +133,50 @@ layui.define(["http", "hand", "form"], function(e) {
 		};
 		$("#idxSi").html(str);
 		form.render("select");
-		toHtmlFn();
 	};
-
-
-	//加载不同的页面
-
-	var names = "";
-
-	function toHtmlFn() {
-		var type = $("#idxYi option:selected").attr("lay-type");
-		switch (Number(type)) {
-			case 0:
-				console.log("图片")
-				names = "imgPage";
-				break;
-			case 1:
-				console.log("pdf")
-				names = "pdfPage";
-				break;
-			case 2:
-				console.log("图片表格")
-				names = "imgTab";
-				break;
-			case 3:
-				console.log("表格")
-				names = "tabPage";
-				break;
-			default:
-				console.log("默认")
-				names = "default";
-		};
-		var src = "./" + names + ".html";
-		// var src = "./imgTab.html";
-		var dom = '<iframe class="iframe" name=' + names + ' src=' + src + ' frameborder="0"></iframe>'
-		$("#iframe").html(dom);
-	};
-	// toHtmlFn();
-
+	
 	// 查询
 	form.on('submit(query)', function(data) {
 		var data = data.field;
-		window.frames[names].comListFn(data);
+		toHtmlFn(data);
 	});
-	// 导出
-	form.on('submit(export)', function(data) {
-		var data = data.field;
-		window.frames[names].exportFn(data);
-	});
-
-
-
+	//加载不同的页面
+	function toHtmlFn(data) {
+		var type = $("#idxYi option:selected").attr("lay-type");
+		var names = "";
+		switch (Number(type)) {
+			case 0:
+				console.log("图片")
+				// names = "imgPage";
+				names = "page";
+				break;
+			case 1:
+				console.log("pdf")
+				// names = "pdfPage";
+				names = "page1";
+				break;
+			case 2:
+				console.log("图片表格")
+				// names = "imgTab";
+				names = "page2";
+				break;
+			case 3:
+				console.log("表格")
+				// names = "tabPage";
+				names = "page3";
+				break;
+			default:
+				console.log("默认")
+				// names = "pdfsPage";
+				names = "page4";
+		};
+		var src = "./" + names + ".html";
+		var dom = '<iframe class="iframe" name=' + names + ' src=' + src + ' frameborder="0"></iframe>'
+		$("#iframe").html(dom);
+		setTimeout(function(){
+			window.frames[names].comListFn(data);
+		},500);
+	};
+	
 	e("deta", {})
 });

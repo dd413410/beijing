@@ -2,27 +2,23 @@ layui.define(["http", "form", "laydate"], function(e) {
 	var http = layui.http.http,
 		urls = layui.urls;
 
-
 	var $ = layui.$,
 		lay = layui.layer,
 		form = layui.form,
 		laydate = layui.laydate;
 
-	
-	var element = null;
+	var value = timeFn();
+	var id = null;
 	window.comListFn = function(data) {
-		element = data.id;
+		id = data.id;
 		http({
 			url: urls.getSave,
 			type: "get",
-			data: data,
+			data: {
+				id: id,
+				time: value
+			},
 			success: function(res) {
-				var dataImg = res.img;
-				console.log(res)
-				$("#forecast").attr("src", dataImg.forecast);
-				$("#monitor").attr("src", dataImg.monitor);
-				$(".hide").show();
-
 				var data = res.data;
 				var thead = '<div>月份</div>',
 					tbody =
@@ -35,20 +31,61 @@ layui.define(["http", "form", "laydate"], function(e) {
 				};
 				$("#thead").html(thead);
 				$("#tbody").html(tbody);
-				
-				laydate.render({
-					elem: '#dete',
-					type: 'month',
-					trigger: 'click'
+				$(".hide").show();
+				initFn();
+			}
+		});
+	};
+	// 初始化日期
+	function initFn() {
+		laydate.render({
+			elem: '#dete',
+			type: 'month',
+			value: value,
+			trigger: 'click',
+			done: function(val) {
+				getImgFn(val);
+			}
+		});
+		getImgFn(value);
+	};
+	// 获取图片
+	function getImgFn(time) {
+		console.log(time)
+
+		http({
+			url: urls.getSave,
+			type: "get",
+			data: {
+				id: id,
+				time: time
+			},
+			success: function(res) {
+				console.log(res)
+
+				var img1 = res.forecast,
+					img2 = res.monitor;
+
+				if (img1.length <= 0 || img2.length <= 0) {
+					return false;
+				};
+
+				$("#img1").attr("src", img1);
+				$("#img2").attr("src", img2);
+
+				form.val('layForm', {
+					"img1": img1,
+					"img2": img2
 				});
+
+
 			}
 		});
 	};
 	// 保存
 	form.on('submit(addBtn)', function(data) {
 		var data = data.field;
-		console.log(data)
-		data.element = element;
+		data.element = id;
 		http({
 			url: urls.getSave,
 			type: "post",
@@ -66,5 +103,12 @@ layui.define(["http", "form", "laydate"], function(e) {
 			}
 		},
 	});
-	e("imgTab", {})
+
+	function timeFn() {
+		var date = new Date();
+		var y = date.getFullYear();
+		var m = date.getMonth()+1;
+		return y + "-" + m;
+	};
+	e("page2", {})
 });

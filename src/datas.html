@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="zh">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<title>海洋气候监测预测平台</title>
+		<link rel="stylesheet" href="../public/lib/layui/css/layui.css">
+		<link rel="stylesheet" href="../assets/css/lib.css">
+		<link rel="stylesheet" href="../assets/css/datas.css">
+	</head>
+	<body>
+		<div class="head">
+			<div class="lt">
+				<a href="../src/home.html">
+					<p class="logo lt"></p>
+					<p class="head-tle lt"></p>
+				</a>
+			</div>
+			<div class="head-deta rt">
+				<div class="head-rt-lt lt" id="user">
+					管理员 欢迎登陆
+				</div>
+				<div class="head-rt-rt lt">
+					<div class="lt" id="time">
+						10:47:21
+					</div>
+					<div class="head-time rt">
+						<p id="week">
+							星期五
+						</p>
+						<p id="date">
+							2020.07.17
+						</p>
+					</div>
+				</div>
+				<div class="out lt" id="out"></div>
+			</div>
+		</div>
+
+
+		<div class="layui-container dataCenter">
+			<div class="layui-form layui-row data-head">
+				<div class="layui-inline">
+					<!-- <input type="text" id="laydate" name="time" lay-verify="time" autocomplete="off" class="layui-input"> -->
+					
+					<select name="time">
+						<option value="01">1月</option>
+						<option value="02">2月</option>
+						<option value="03">3月</option>
+						<option value="04">4月</option>
+						<option value="05">5月</option>
+						<option value="06">6月</option>
+						<option value="07">7月</option>
+						<option value="08">8月</option>
+						<option value="09">9月</option>
+						<option value="10">10月</option>
+						<option value="11">11月</option>
+						<option value="12">12月</option>
+					</select>
+				</div>
+				<div class="layui-inline">
+					<button class="layui-btn" lay-submit lay-filter="formBtn">查询</button>
+				</div>
+			</div>
+			
+			<div id="table" lay-filter="test"></div>
+		</div>
+
+
+
+
+
+
+
+
+
+	</body>
+	<script src="../public/lib/layui/layui.js"></script>
+	<script>
+		layui
+			.config({
+				base: "../assets/",
+			})
+			.extend({
+				http: "api/http",
+				hand: "api/hand",
+				lib: "js/lib",
+				datas: "js/datas",
+			}).use(["lib", "datas"]);
+	</script>
+</html>

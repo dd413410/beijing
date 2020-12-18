@@ -1,12 +1,3 @@
-* {
-	margin: 0;
-	padding: 0;
-	-moz-user-select: none;
-	-webkit-user-select: none;
-	-ms-user-select: none;
-	user-select: none;
-}
-
 html {
 	width: 100%;
 	height: 100%;
@@ -17,100 +8,6 @@ body {
 	height: 100%;
 	background: #000015;
 	box-sizing: border-box;
-}
-
-.lt {
-	float: left;
-}
-
-.rt {
-	float: right;
-}
-
-.head {
-	width: 100%;
-	height: 80px;
-	padding: 0 40px;
-	box-sizing: border-box;
-	position: fixed;
-	left: 0;
-	top: 0;
-	z-index: 3;
-}
-
-.logo {
-	width: 54px;
-	height: 54px;
-	background: url(../../images/logo.png) no-repeat;
-	background-size: 100% 100%;
-	margin-top: 8px;
-	margin-right: 20px;
-}
-
-.head-tle {
-	width: 525px;
-	height: 54px;
-	background: url(../../images/home3.png) no-repeat;
-	background-size: 100% 100%;
-	margin-top: 13px;
-}
-
-.out {
-	width: 66px;
-	height: 37px;
-	background: url(../../images/out.png) no-repeat;
-	background-size: 100% 100%;
-	margin-top: 21px;
-	margin-left: 20px;
-	cursor: pointer;
-}
-
-.head-deta {
-	height: 80px;
-}
-
-.head-deta .head-rt-lt {
-	width: 156px;
-	height: 80px;
-	line-height: 80px;
-	color: #1CA9F7;
-	font-size: 20px;
-	font-weight: 500;
-	letter-spacing: 1px;
-}
-
-.head-deta .head-rt-rt {
-	width: 250px;
-	height: 44px;
-	line-height: 44px;
-	color: #FFFFFF;
-	font-size: 28px;
-	font-weight: 400;
-	letter-spacing: 1px;
-	margin: 18px 0 18px 30px;
-	padding: 0 20px;
-	box-sizing: border-box;
-	background: url(../../images/home1.png) no-repeat;
-	background-size: 100% 100%;
-}
-
-.head-time {
-	width: 67px;
-	color: #FFFFFF;
-	font-size: 12px;
-	font-weight: 400;
-}
-
-.head-time p {
-	height: 22px;
-}
-
-.head-time p:nth-child(1) {
-	line-height: 33px;
-}
-
-.head-time p:nth-child(2) {
-	line-height: 22px;
 }
 
 /* 左侧 */
@@ -183,42 +80,6 @@ body {
 }
 
 
-/* 右下角 */
-#certify {
-	position: relative;
-}
-
-#certify .swiper-slide {
-	width: 180px;
-	height: 220px;
-	background: #fff;
-	box-shadow: 0 8px 30px #ddd;
-}
-
-#certify .swiper-slide img {
-	display: block;
-	width: 100%;
-	height: 100%;
-}
-
-#certify .swiper-pagination {
-	width: 100%;
-	bottom: 10px;
-}
-
-#certify .swiper-pagination-bullets .swiper-pagination-bullet {
-	margin: 0 5px;
-	border: 3px solid #fff;
-	background-color: #d5d5d5;
-	width: 7px;
-	height: 7px;
-	opacity: 1;
-}
-
-#certify .swiper-pagination-bullets .swiper-pagination-bullet-active {
-	border: 3px solid #00aadc;
-	background-color: #fff;
-}
 
 /* 中间 */
 .menu-center {
@@ -232,10 +93,12 @@ body {
 	transform: translate(-50%, -50%);
 	display: flex;
 	flex-direction: column;
+	
+	align-items: center;
 }
 
 .menu-center-tle {
-	width: 710px;
+	width: 100%;
 	height: 40px;
 	line-height: 40px;
 	text-indent: 20px;
@@ -256,13 +119,17 @@ body {
 	font-size: 10px;
 	font-weight: 400;
 }
-
 .menu-center-box {
 	flex: 1;
+	display: flex;
+	align-items: center;
+	width: 100%;
+	/* width: 750px; */
+}
+#centerCar{
 	overflow: hidden;
 }
-
-.menu-center-box img {
+#centerCar img {
 	display: block;
 	width: 100%;
 	height: 100%;

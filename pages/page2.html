@@ -6,22 +6,25 @@
 		<meta http-equiv="X-UA-Compatible" content="ie=edge">
 		<title>海洋气候监测预测平台</title>
 		<link rel="stylesheet" href="../public/lib/layui/css/layui.css">
-		<link rel="stylesheet" href="../assets/css/imgTab.css">
+		<link rel="stylesheet" href="../assets/css/page2.css">
 	</head>
 	<body>
-		<div class="img-top hide">
+		<div class="img-top">
+			<!-- <div class="img-top"> -->
 			<div class="img-left">
-				<p>预测</p>
-				<img src="" id="forecast">
+				<p>预测图片</p>
+				<!-- <button class="layui-btn layui-btn-disabled" id="upload1">预测图片</button> -->
+				<img id="img1">
 			</div>
 			<div class="img-right">
-				<p>监测</p>
-				<img src="" id="monitor">
+				<p>监测图片</p>
+				<!-- <button class="layui-btn layui-btn-disabled" id="upload2">监测图片</button> -->
+				<img id="img2" class="img2">
 			</div>
 		</div>
 
 
-		<div class="layui-form hide">
+		<div class="layui-form hide" lay-filter="layForm">
 			<div class="hide-container">
 				<div class="hide-row" id="thead">
 					<!-- <div>月份</div>
@@ -39,8 +42,14 @@
 					<div>江汉</div> -->
 				</div>
 				<div class="hide-row" id="tbody">
+					<div><input type="text" id="dete" name="Month" lay-verify="dete" autocomplete="off" class="layui-input"></div>
 					<!-- <div><input type="text" name="Month" lay-verify="dete" autocomplete="off" class="layui-input"></div>
 					<div><input type="text" name="DongBei" lay-verify="required" lay-reqtext="请输入东北数值" autocomplete="off" class="layui-input"></div> -->
+				</div>
+
+				<div class="hide-rows">
+					<input type="hidden" id="imgBox1" name="img1" lay-verify="required" lay-reqtext="请先获取预测图片">
+					<input type="hidden" id="imgBox2" name="img2" lay-verify="required" lay-reqtext="请先获取监测图片">
 				</div>
 
 				<div class="subbtn">
@@ -125,8 +134,8 @@
 			.extend({
 				http: "api/http",
 				hand: "api/hand",
-				imgTab: "js/imgTab",
+				page2: "js/page2",
 			})
-			.use("imgTab");
+			.use("page2");
 	</script>
 </html>

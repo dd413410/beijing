@@ -78,6 +78,11 @@ layui.define(['jquery'], function(exports) {
 
 			return (reg.test(val));
 		},
+		regUrl:function(val){
+			var reg =/(http|ftp|https):\/\/[\w\-_]+(\.[\w\-_]+)+([\w\-\.,@?^=%&amp;:/~\+#]*[\w\-\@?^=%&amp;/~\+#])?/;
+			return (reg.test(val));
+			
+		},
 		base: function() {
 			var curPath = window.document.location.href;
 			var pathName = window.document.location.pathname;

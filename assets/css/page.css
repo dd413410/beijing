@@ -15,4 +15,5 @@ html,body{
 }
 img{
 	display: inline-block;
+	margin-top: 10px;
 }

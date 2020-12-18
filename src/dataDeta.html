@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="zh">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<title>海洋气候监测预测平台</title>
+		<link rel="stylesheet" href="../public/lib/layui/css/layui.css">
+		<link rel="stylesheet" href="../assets/css/lib.css">
+		<link rel="stylesheet" href="../assets/css/dataDeta.css">
+	</head>
+	<body>
+		<div class="head">
+			<div class="lt">
+				<a href="../src/home.html">
+					<p class="logo lt"></p>
+					<p class="head-tle lt"></p>
+				</a>
+			</div>
+			<div class="head-deta rt">
+				<div class="head-rt-lt lt" id="user">
+					管理员 欢迎登陆
+				</div>
+				<div class="head-rt-rt lt">
+					<div class="lt" id="time">
+						10:47:21
+					</div>
+					<div class="head-time rt">
+						<p id="week">
+							星期五
+						</p>
+						<p id="date">
+							2020.07.17
+						</p>
+					</div>
+				</div>
+				<div class="out lt" id="out"></div>
+			</div>
+		</div>
+
+		<div class="layui-container dataCenter">
+			<div class="layui-row ">
+				<div class="layui-col-xs10">
+					<div class="data-title" id="title"></div>
+					<p class="data-head">简要描述:</p>
+					<div class="sub-desc" id="simple"></div>
+					
+					<p class="data-head">网址</p>
+					<div class="layui-form data-url" lay-filter="layForm">
+						<input type="hidden" name="id" class="layui-input">
+						<input type="text" name="url" lay-verify="dete" autocomplete="off" placeholder="请输入网址,例如:http://www.xxyy.com" class="layui-input">
+						<button class="layui-btn" lay-submit lay-filter="dataBtn">修改</button>
+					</div>
+					<!-- <div class="data-img">
+						<img src="../images/0.png" alt="">
+					</div> -->
+					<p class="data-head">数据列表查询:</p>
+					<div id="table"></div>
+					<div class="data-btn">
+						<button class="layui-btn layui-btn-sm" onclick="navToFn()">
+							更多
+						</button>
+					</div>
+					<!-- <p class="data-head">数据重新下载:</p> -->
+					<p class="data-head">详细说明:</p>
+					<div class="sub-desc" id="desc"></div>
+				</div>
+			</div>
+		</div>
+
+
+		<div class="data-time">
+			<div class="data-title">
+				今年气候数据集：按月
+			</div>
+			<table>
+				<tbody>
+					<tr>
+						<td class="add" lay-id="01">January</td>
+					</tr>
+					<tr>
+						<td  lay-id="02">February</td>
+					</tr>
+					<tr>
+						<td  lay-id="03">March</td>
+					</tr>
+					<tr>
+						<td  lay-id="04">April</td>
+					</tr>
+					<tr>
+						<td  lay-id="05">May</td>
+					</tr>
+					<tr>
+						<td lay-id="06">June</td>
+					</tr>
+					<tr>
+						<td lay-id="07">July</td>
+					</tr>
+					<tr>
+						<td lay-id="08">August</td>
+					</tr>
+					<tr>
+						<td lay-id="09">September</td>
+					</tr>
+					<tr>
+						<td lay-id="10">October</td>
+					</tr>
+					<tr>
+						<td lay-id="11">November</td>
+					</tr>
+					<tr>
+						<td lay-id="12">December</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+
+
+	</body>
+	<script src="../public/lib/layui/layui.js"></script>
+	<script>
+		layui
+			.config({
+				base: "../assets/",
+			})
+			.extend({
+				http: "api/http",
+				hand: "api/hand",
+				lib: "js/lib",
+				dataDeta: "js/dataDeta",
+			}).use(["lib", "dataDeta"]);
+	</script>
+</html>

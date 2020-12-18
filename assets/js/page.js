@@ -20,5 +20,5 @@ layui.define(["http"], function(e) {
 			}
 		});
 	};
-	e("imgPage", {})
+	e("page", {})
 });

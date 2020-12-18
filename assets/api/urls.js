@@ -28,8 +28,9 @@ layui.define(function(exports) {
 		product: base + "/product/",
 		dataCenter: base + "/data/center/",
 		dataGen: base + "/data/download/",
-		
-		
+		history: base + "/data/history/",
+		deta: base + "/data/detail/",
+		search: base + "/data/search/",
 		
 		
 	});

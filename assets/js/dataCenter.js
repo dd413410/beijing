@@ -15,10 +15,17 @@ layui.define(["http"], function(e) {
 				var data = res.data;
 				var str = '';
 				for (var i = 0; i < data.length; i++) {
-					var dataItem = data[i].fields;
-					str += '<tr><td><a href="#">' + dataItem.LinkName + '</a></td>' +
-						'<td>' + dataItem.description + '</td>' +
-						'</tr>';
+					var dataItem = data[i].data;
+					var thead = '<tr><td colspan="2"><span class="thead">' + data[i].title + '</span></td></tr>';
+					var tbody = '';
+					for (var d = 0; d < dataItem.length; d++) {
+						var item = dataItem[d];
+						tbody += '<tr>' +
+							'<td><a  href="./dataDeta.html?id=' + item.id + '">' + item.LinkName + '</a></td>' +
+							'<td>' + item.description + '</td>' +
+							'</tr>';
+					};
+					str += thead + tbody;
 				};
 				$("#tbody").html(str);
 			}
@@ -36,7 +43,6 @@ layui.define(["http"], function(e) {
 				id: 53
 			},
 			success: function(res) {
-				console.log(res)
 				var data = res.data;
 				var str = '';
 
@@ -64,6 +70,6 @@ layui.define(["http"], function(e) {
 			}
 		})
 	};
-	
+
 	e("dataCenter", {})
 });

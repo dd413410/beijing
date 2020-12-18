@@ -3,19 +3,21 @@ layui.define(["http"], function(e) {
 		urls = layui.urls,
 		load = layui.http.load,
 		loads = layui.http.loads;
-	console.log(loads)
-
 
 	var $ = layui.$,
 		lay = layui.layer;
 
 	window.comListFn = function(data) {
+		console.log(data)
 		http({
-			url: urls.getPdf,
+			url: urls.history,
 			type: "get",
-			data: data,
+			data:{
+				id:data.id
+			},
 			success: function(res) {
 				var data = res.data;
+				console.log(data)
 				if (data.length <= 0) {
 					lay.msg("查询无结果");
 					return false;
@@ -58,5 +60,5 @@ layui.define(["http"], function(e) {
 			}
 		});
 	};
-	e("pdfPage", {})
+	e("page4", {})
 });

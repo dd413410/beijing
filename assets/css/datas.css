@@ -1,0 +1,25 @@
+body {
+	width: 100%;
+padding-top: 120px;
+	box-sizing: border-box;
+}
+
+.dataCenter {
+	width: 1000px;
+}
+
+.data-head {
+	height: 50px;
+	line-height: 50px;
+	text-align: center;
+}
+.data-head .layui-inline {
+	vertical-align: baseline;
+}
+/* 修改layui样式 */
+.layui-table-cell{
+	text-align: center;
+}
+.layui-table-page {
+	text-align: right;
+}

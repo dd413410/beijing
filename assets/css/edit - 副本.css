@@ -23,17 +23,17 @@ body {
 }
 .fluid {
 	height: 100vh;
-	/* min-width: 1680px; */
+	min-width: 1680px;
 	overflow: hidden;
 	padding: 10px 0;
 	box-sizing: border-box;
 	margin: auto;
-	
-	display: flex;
-	
 }
 /* 在线编辑 */
 .menu-edit {
+	float: left;
+	width: 1150px;
+	min-width: 1150px;
 	height: 100%;
 	padding-top: 40px;
 	padding-bottom: 50px;
@@ -76,7 +76,7 @@ body {
 	margin-left: 10px;
 }
 #myedit {
-	/* width: 1150px; */
+	width: 1150px;
 	/* width: 720px; */
 	height: 100%;
 }
@@ -99,6 +99,7 @@ body {
 }
 /* 右侧图片 */
 .menu-img {
+	float: left;
 	width: 480px;
 	height: 100%;
 	border: 1px solid #000;

@@ -36,5 +36,5 @@ layui.define(["http", "table"], function(e) {
 			}
 		});
 	};
-	e("tabPage", {})
+	e("page3", {})
 });
